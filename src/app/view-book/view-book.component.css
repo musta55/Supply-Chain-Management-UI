@@ -1,0 +1,18 @@
+p{
+    text-align: justify;
+}
+
+.col-7,h1,h3,h4,p{
+    padding: 10px 30px 0px 10px;
+}
+.container{
+    padding-top: 80px;
+    padding-left: 50px;
+}
+body{
+    height: 100vh;
+    background-color: rgb(15, 15, 15) !important;
+}
+.col-7{
+    text-decoration: none white !important;
+}

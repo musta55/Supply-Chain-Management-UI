@@ -1,0 +1,30 @@
+.btn-success{
+    background-color: rgb(11, 93, 93) !important;
+    border-color: rgb(11, 93, 93) !important;
+    margin: 20px 0px;
+    padding: 10px 30px;
+}
+th,td{
+    padding-left: 40px;
+}
+.row{
+    padding: 5px 5px;
+    margin: 10px 20px 10px;
+}
+.card{
+    margin: 20px 10px;
+}
+.card:hover{
+    transform: scale(1.05);
+ box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+button{
+    margin: 0px 5px;
+}
+
+.bgrnd{
+    height: 100%;
+    padding-bottom: 50px;
+    background-color: rgb(255, 255, 255) !important;
+    text-decoration: none white;
+}
