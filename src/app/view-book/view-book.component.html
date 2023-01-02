@@ -2,18 +2,24 @@
   <div class="container">
     <div class="row">
       <div class="col-7 text-white">
-        
+
         <h1>{{viewBook.name}} </h1>
-        <h3>Publishing Year: {{viewBook.year}}</h3>
-        <h4 *ngIf="viewBook.availability">Status: Available</h4>
-        <h4 *ngIf="!viewBook.availability">Status: Borrowed</h4>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis iusto rerum necessitatibus tempore ea, quisquam cupiditate totam sint veniam quos laborum aliquam eaque dignissimos eos, qui quaerat exercitationem eius commodi explicabo quis dicta! Voluptatibus earum vitae sequi inventore sit id, quos consequatur assumenda quam perferendis officiis labore quod, sint molestias, iusto illum similique illo rerum ipsum quis excepturi error rem! Reiciendis blanditiis reprehenderit distinctio itaque quis magnam, nulla placeat quo, laboriosam porro velit soluta! Animi fugiat quae aliquid odit qui ea quam omnis repudiandae. Alias officiis inventore, rem aut dolor suscipit? Harum veritatis, fugit ipsam eveniet atque optio eos nesciunt!</p>
+        <h3>Preprocessed Date: {{viewBook.year}}</h3>
+        <h4 *ngIf="viewBook.availability">Condition: Okay</h4>
+        <h4 *ngIf="!viewBook.availability">Condition: Not Okay</h4>
+        <p>This cattle farm was established in 2010 with a view to produce good quality world class meat and Dairy products
+          for the local and international consumers. Within 8 years Sadeeq Agro becomes pioneer setting a largest cattle
+          farm house in the country. Through research and observing market demand this is working continuously
+          improving new and quality products.
+           All products we produce in our own farm house and sell to customers as
+          retail and wholesale basis with extensive care. Ensure the safe and best quality food is our prime concern.
+        </p>
 
       </div>
       <div class="col-5">
-        <img src="http://media2.s-nbcnews.com/i/streams/2013/June/130628/6C8073164-tdy-130628-harry-potter-1.jpg" style="height: 400px;"  alt="Card image">
+        <img src="https://www.oeko-tex.com/fileadmin/_processed_/1/2/csm_orange-leather_76377913bf.jpg"
+          style="height: 400px;" alt="Card image">
       </div>
     </div>
   </div>
 </body>
-

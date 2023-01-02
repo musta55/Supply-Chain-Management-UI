@@ -11,6 +11,7 @@ import { UpdateBookComponent } from './update-book/update-book.component';
 import { ViewBookComponent } from './view-book/view-book.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { QrscanComponent } from './qrscan/qrscan.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { RegisterComponent } from './register/register.component';
     UpdateBookComponent,
     ViewBookComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    QrscanComponent
   ],
   imports: [
     BrowserModule,

@@ -9,6 +9,10 @@ export class BookService {
   {id:1002, name:"Muhammad Cattle Farm",year:"1st january, 2023",color:"Black", availability:false},
   {id:1003, name:"SS Cattle Farm",year:"24th December, 2022",color:"Red", availability:true},
   {id:1004, name:"SD Cattle Farm",year:"2nd january, 2023",color:"White-black", availability:true},
+  {id:1005, name:"Sadik Agro Farm",year:"1st january, 2023",color:"black", availability:true},
+  {id:1006, name:"Golden harvest Agro",year:"2nd january, 2023",color:"Redish", availability:true},
+  {id:1007, name:"Nahar Agro Farm",year:"2nd january, 2023",color:"White", availability:true},
+  {id:1008, name:"Naba Cattle Farm",year:"2nd january, 2023",color:"Red", availability:true},
 ]
 
   bookToUpdate = new Book();
