@@ -1,25 +1,38 @@
 <body>
   <div class="container">
     <div class="row">
-      <div class="col-7 text-white">
+      <div class="col-7 text-dark">
 
-        <h1>{{viewBook.name}} </h1>
-        <h3>Preprocessed Date: {{viewBook.year}}</h3>
-        <h4 *ngIf="viewBook.availability">Condition: Okay</h4>
-        <h4 *ngIf="!viewBook.availability">Condition: Not Okay</h4>
-        <p>This cattle farm was established in 2010 with a view to produce good quality world class meat and Dairy products
-          for the local and international consumers. Within 8 years Sadeeq Agro becomes pioneer setting a largest cattle
-          farm house in the country. Through research and observing market demand this is working continuously
-          improving new and quality products.
-           All products we produce in our own farm house and sell to customers as
-          retail and wholesale basis with extensive care. Ensure the safe and best quality food is our prime concern.
-        </p>
+        <h3>{{viewBook.name}} </h3>
+        <h4 *ngIf="!viewBook.availability">Condition: Okay</h4>
+        <h4 *ngIf="viewBook.availability">Condition: Not Okay</h4>
+        <pre>
+Leather Type: Full Grained Leather
+Leather Color: Red
+Processed Date: 2nd January, 2023
+Previous Owner: Sadeeq Agro Farm 
+Farm Description: Sadeeq agro was established in 2010 
+with a view to produce good quality world class meat 
+and Dairy products for the local and international consumers.
+Within 8 years Sadeeq Agro becomes pioneer setting a largest 
+cattle farm house in the country. Through research and 
+observing market demand Sadeeq Agro is working continuously 
+improving new and quality products.
+        </pre>
 
       </div>
+
       <div class="col-5">
         <img src="https://www.oeko-tex.com/fileadmin/_processed_/1/2/csm_orange-leather_76377913bf.jpg"
           style="height: 400px;" alt="Card image">
       </div>
+      <div class="row">
+        <div class="col-10">
+          <button (click)="qrscan()" class="btn btn-success">QR Scan</button>
+        </div>
+
+      </div>
+
     </div>
   </div>
 </body>

@@ -8,16 +8,23 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private route: Router) { }
+  constructor(private route: Router) {
 
+  }
+  user = "";
   ngOnInit(): void {
+
   }
 
-  register(){
+
+  register() {
     this.route.navigate(['register']);
   }
-  home(){
-    this.route.navigate(['']);
+  home() {
+    if (this.user == "Cattle House Operator") this.route.navigate(['cattle']);
+    else
+      this.route.navigate(['']);
   }
+
 
 }

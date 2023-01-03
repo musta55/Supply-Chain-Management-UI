@@ -12,6 +12,8 @@ import { ViewBookComponent } from './view-book/view-book.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { QrscanComponent } from './qrscan/qrscan.component';
+import { CattleHouseDashboardComponent } from './cattle-house-dashboard/cattle-house-dashboard.component';
+import { TransferLeatherComponent } from './transfer-leather/transfer-leather.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { QrscanComponent } from './qrscan/qrscan.component';
     ViewBookComponent,
     LoginComponent,
     RegisterComponent,
-    QrscanComponent
+    QrscanComponent,
+    CattleHouseDashboardComponent,
+    TransferLeatherComponent
   ],
   imports: [
     BrowserModule,

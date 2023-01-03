@@ -16,11 +16,6 @@ export class NavbarComponent implements OnInit {
   home(){
     this.route.navigate(['']);
   }
-
-  qrScan(){
-    this.route.navigate(['qrscan']);
-  }
-
   goToLogin(){
     this.route.navigate(['login']);
   }

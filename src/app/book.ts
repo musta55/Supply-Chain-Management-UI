@@ -1,7 +1,7 @@
 export class Book{
-    id: number = 0;
-    name: string = "";
+    id: number = 1001;
+    name: string = "Full grained Leather";
     year: string = "23rd December,2022";
-    color: string = "black";
+    color: string = "Black";
     availability: boolean = false;
 }

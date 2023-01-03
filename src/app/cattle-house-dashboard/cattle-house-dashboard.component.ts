@@ -4,11 +4,11 @@ import { Book } from '../book';
 import { BookService } from '../book.service';
 
 @Component({
-  selector: 'app-book-list',
-  templateUrl: './book-list.component.html',
-  styleUrls: ['./book-list.component.css'],
+  selector: 'app-cattle-house-dashboard',
+  templateUrl: './cattle-house-dashboard.component.html',
+  styleUrls: ['./cattle-house-dashboard.component.css']
 })
-export class BookListComponent implements OnInit {
+export class CattleHouseDashboardComponent implements OnInit {
 
   constructor(private bookService: BookService, private router: Router) { }
   books: Book[] = [];
@@ -33,12 +33,4 @@ export class BookListComponent implements OnInit {
     this.bookService.setViewBook(book);
     this.router.navigate(['viewBook']);
   }
-
-  transfer(book: Book, index: number){
-    console.log(book);
-    this.bookService.setBookToUpdate(book,index);
-    this.router.navigate(['transferLeather']);
-  }
-
-
 }
