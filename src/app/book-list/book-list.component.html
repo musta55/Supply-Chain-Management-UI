@@ -13,7 +13,7 @@
     <h1 *ngIf = "userRole == 'Slaughter House Operator'" align="center" style="color: rgb(2, 0, 0);">Welcome to Sadeeq Agro Bucher House</h1>
     <h1 *ngIf = "userRole == 'Production Manager'" align="center" style="color: rgb(2, 0, 0);">Welcome to Bagtime Italia - Fabbrica di borse </h1>
    
-    <button class="btn btn-success" (click)="addBook()">
+    <button *ngIf = "userRole == 'Cattle House Operator'" class="btn btn-success" (click)="addBook()">
       <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-plus-square"
         viewBox="0 0 16 16">
         <path
@@ -21,23 +21,98 @@
         <path
           d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
       </svg>
-      Add Item
+      Add Cattle
     </button>
   </div>
 
   <div class="row">
     <table class="table table-striped table-hover table-bordered">
-      <thead>
-        <tr>
+      <thead *ngIf = "userRole == 'Tennary Factory Operator'">
+        <tr >
           <th scope="col ">LeatherID</th>
           <th scope="col">Leather Owner</th>
           <th scope="col">PreprocessedDate</th>
-          <th scope="col">Leather Color</th>
-          <th scope="col">Leather Condition</th>
+          <th scope="col">Finished Leather Color</th>
+          <th scope="col">Finished Leather Condition</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
-      <tbody>
+
+      <thead *ngIf = "userRole == 'Cattle House Operator'">
+        <tr >
+          <th scope="col ">Cow ID</th>
+          <th scope="col">Cow Farm Owner</th>
+          <th scope="col">Date Of Birth</th>
+          <th scope="col">Cow Color</th>
+          <th scope="col">Cattle Health Condition</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+
+      <thead *ngIf ="userRole == 'Slaughter House Operator'">
+        <tr >
+          <th scope="col ">Cow ID</th>
+          <th scope="col">Previous Cattle House</th>
+          <th scope="col">Slaughtered Date</th>
+          <th scope="col">RawHide Color</th>
+          <th scope="col">RawHide Condition</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+
+      <thead *ngIf = "userRole == 'Production Manager'">
+        <tr >
+          <th scope="col ">Bag ID</th>
+          <th scope="col">Bag Production House</th>
+          <th scope="col">Date Of Manufacturing</th>
+          <th scope="col">Bag Color</th>
+          <th scope="col">Bag Status</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+
+
+      <tbody *ngIf = "userRole == 'Production Manager'" >
+        <td>
+          <div class="  text-dark" scope="row" *ngFor="let bag of bags; let i = index">
+            <p class="card-title">{{bag.id}}</p>
+          </div>
+        </td>
+
+        <td>
+          <div class="  text-dark" scope="row" *ngFor="let bag of bags; let i = index">
+            <p class="card-title">{{bag.name}}</p>
+          </div>
+        </td>
+        <td>
+          <div class="  text-dark" scope="row" *ngFor="let bag of bags; let i = index">
+            <p class="card-title">{{bag.year}}</p>
+          </div>
+        </td>
+        <td>
+          <div class="  text-dark" scope="row" *ngFor="let bag of bags; let i = index">
+            <p class="card-title">{{bag.color}}</p>
+          </div>
+        </td>
+
+
+        <td>
+          <div class="  text-dark" scope="row" *ngFor="let bag of bags; let i = index">
+            <p class="card-title" *ngIf="bag.availability" style="color: rgb(21, 121, 21);">Right</p>
+            <p class="card-title" *ngIf="!bag.availability" style="color: rgb(163, 5, 5)">Wrong</p>
+          </div>
+        </td>
+
+        <td>
+          <div class="text-dark" scope="row" *ngFor="let bag of bags; let i = index">
+            <button class="btn btn-info" style=" font-size: 72%;" (click)="viewBag(bag)">View</button>
+            <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style=" font-size: 72%;" (click)="transfer(bag,i)">Transfer</button>
+          </div>
+        </td>
+
+      </tbody>
+
+      <tbody  *ngIf = "userRole != 'Production Manager'">
         <td>
           <div class="  text-dark" scope="row" *ngFor="let book of books; let i = index">
             <p class="card-title">{{book.id}}</p>
@@ -72,21 +147,6 @@
           <div class="text-dark" scope="row" *ngFor="let book of books; let i = index">
             <button class="btn btn-info" style=" font-size: 72%;" (click)="viewBook(book)">View</button>
             <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style=" font-size: 72%;" (click)="transfer(book,i)">Transfer</button>
-
-            <!-- <button type="button" (click)="deleteBook(book)" class="btn btn-danger" style="font-size: 72%;"><svg
-                xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-trash3"
-                viewBox="0 0 12 12">
-                <path
-                  d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z" />
-              </svg></button> -->
-            <!-- <button type="button" (click)="updateBook(book,i)" class="btn btn-primary" style="font-size: 58%"><svg
-                xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor"
-                class="bi bi-pencil-square" viewBox="0 0 12 12">
-                <path
-                  d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
-                <path fill-rule="evenodd"
-                  d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
-              </svg></button> -->
           </div>
         </td>
 

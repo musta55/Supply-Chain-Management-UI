@@ -4,8 +4,8 @@
       <div class="col-7 text-dark">
 
         <h3>{{viewBook.name}} </h3>
-        <h4 *ngIf="!viewBook.availability">Condition: Okay</h4>
-        <h4 *ngIf="viewBook.availability">Condition: Not Okay</h4>
+        <h4 *ngIf="viewBook.availability">Condition: Okay</h4>
+        <h4 *ngIf="!viewBook.availability">Condition: Not Okay</h4>
         <pre>
 Leather Type: Full Grained Leather
 Leather Color: Red
@@ -22,10 +22,31 @@ improving new and quality products.
 
       </div>
 
-      <div class="col-5">
-        <img src="https://www.oeko-tex.com/fileadmin/_processed_/1/2/csm_orange-leather_76377913bf.jpg"
+      <div *ngIf = "userRole == 'Tennary Factory Operator'" class="col-5 ">
+        <img src="../../assets/images/tannery.jpg"
           style="height: 400px;" alt="Card image">
       </div>
+
+
+      
+      <div *ngIf = "userRole == 'Cattle House Operator'"class="col-5">
+        <img src="https://a2milkdelhi.com/wp-content/uploads/2017/04/red-sindhi-cow.jpg"
+          style="height: 400px;" alt="Card image">
+      </div>
+
+      <div *ngIf = "userRole == 'Slaughter House Operator'"class="col-5 ">
+        <img src="../../assets/images/slaughterHouse.jpg"
+          style="height: 400px; width: 400px;" alt="Card image">
+      </div>
+
+
+      
+      <div *ngIf ="userRole == 'Production Manager'"class="col-5">
+        <img src="https://www.leatherluxury.it/media/brand/DAN_0798.jpg"
+          style="height: 400px;" alt="Card image">
+      </div>
+
+      
       <div class="row">
         <div class="col-10">
           <!-- <button (click)="qrscan()" class="btn btn-success">QR Scan</button> -->

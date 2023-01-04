@@ -10,10 +10,12 @@ import { BookService } from '../book.service';
 })
 export class ViewBookComponent implements OnInit {
 
-
-  constructor(private bookservice: BookService, private route: Router) { }
-  viewBook = this.bookservice.getViewBook();
+userRole = "";
+  constructor(private bookService: BookService, private route: Router) { }
+  viewBook = this.bookService.getViewBook();
+  books: Book[] = [];
   ngOnInit(): void {
+    this.userRole = this.bookService.getUser();
   }
   qrscan() {
 

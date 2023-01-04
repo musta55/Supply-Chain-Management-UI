@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Bag } from 'src/bag';
 import { Book } from '../book';
 import { BookService } from '../book.service';
 
@@ -14,9 +15,11 @@ export class BookListComponent implements OnInit {
 
   constructor(private bookService: BookService, private router: Router) { }
   books: Book[] = [];
+  bags: Bag[] = [];
   ngOnInit(): void {
     this.userRole = this.bookService.getUser();
     this.books = this.bookService.getBooks();
+    this.bags = this.bookService.getBags();
   }
 
   deleteBook(book: Book) {
@@ -34,6 +37,12 @@ export class BookListComponent implements OnInit {
   viewBook(book: Book) {
     console.log(book);
     this.bookService.setViewBook(book);
+    this.router.navigate(['viewBook']);
+  }
+
+  viewBag(bag: Bag) {
+    console.log(bag);
+    this.bookService.setViewBook(bag);
     this.router.navigate(['viewBook']);
   }
 
