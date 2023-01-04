@@ -28,6 +28,12 @@ export class CattleHouseDashboardComponent implements OnInit {
     this.bookService.setBookToUpdate(book,index);
     this.router.navigate(['updateBook']);
   }
+
+  transfer(book: Book, index: number){
+    console.log(book);
+    this.bookService.setBookToUpdate(book,index);
+    this.router.navigate(['transferLeather']);
+  }
   viewBook(book: Book){
     console.log(book);
     this.bookService.setViewBook(book);

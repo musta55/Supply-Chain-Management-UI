@@ -15,11 +15,20 @@ export class BookService {
   {id:1008, name:"Naba Cattle Farm",year:"2nd january, 2023",color:"Red", availability:true},
 ]
 
+  userRole = "";
   bookToUpdate = new Book();
   bookToUpdateIndex: any = 0;
 
   bookToView = new Book();
   constructor() { }
+
+  getUser(): string{
+    return this.userRole;
+  }
+  
+  setUser(givenUser: string){
+    this.userRole = givenUser;
+  }
 
   getBooks(): Book[]{
     return this.books;
@@ -33,7 +42,8 @@ export class BookService {
   }
   setBookToUpdate(updatedBook: Book, index: number){
     this.bookToUpdate = updatedBook;
-    this.bookToUpdateIndex = index;
+    this.bookToUpdateIndex
+     = index;
   }
 
   getBookToUpdate(): Book{

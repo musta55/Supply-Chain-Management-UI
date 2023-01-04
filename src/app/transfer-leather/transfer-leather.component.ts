@@ -11,8 +11,10 @@ export class TransferLeatherComponent implements OnInit {
 
  
   constructor(private bookservice: BookService, private route: Router) { }
+  userRole = "";
   givenBook = this.bookservice.getBookToUpdate();
   ngOnInit(): void {
+    this.userRole =  this.bookservice.getUser();
   }
 
   updateBook(){

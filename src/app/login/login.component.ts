@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { BookService } from '../book.service';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private route: Router) {
+  constructor(private route: Router, private bookService: BookService) {
 
   }
   user = "";
@@ -20,9 +21,15 @@ export class LoginComponent implements OnInit {
   register() {
     this.route.navigate(['register']);
   }
+
+
   home() {
-    if (this.user == "Cattle House Operator") this.route.navigate(['cattle']);
-    else
+    this.bookService.setUser(this.user);
+    // if (this.user == "Cattle House Operator") 
+    // {
+    //   this.route.navigate(['cattle']);
+    // }
+    // else
       this.route.navigate(['']);
   }
 
