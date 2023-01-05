@@ -3,53 +3,55 @@
     <div class="row">
       <div class="col-7 text-dark">
 
-        <h3>{{viewBook.name}} </h3>
+        <h3 *ngIf="userRole == 'Tennary Factory Operator'">RK Leather </h3>
+        <h3 *ngIf="userRole != 'Tennary Factory Operator'">{{viewBook.name}} </h3>
+
         <h4 *ngIf="viewBook.availability">Condition: Okay</h4>
         <h4 *ngIf="!viewBook.availability">Condition: Not Okay</h4>
 
-        <pre *ngIf="userRole == 'Tennary Factory Operator'">
-Leather Type: Full Grained Leather
-Leather Color: Red
-Processed Date: 2nd January, 2023
-Previous Owner: Sadeeq Agro Farm 
-Farm Description: Sadeeq agro was established in 2010 
-with a view to produce good quality world class meat 
-and Dairy products for the local and international consumers.
-Within 8 years Sadeeq Agro becomes pioneer setting a largest 
-cattle farm house in the country. Through research and 
-observing market demand Sadeeq Agro is working continuously 
-improving new and quality products.
-        </pre>
+        <p *ngIf="userRole == 'Tennary Factory Operator'">
+          Leather Type: Full Grained Leather
+          Leather Color: Red
+          Processed Date: 2nd January, 2023
+          Previous Owner: Sadeeq Agro Slaughter House
+          Farm Description:RK leather has been setting industry standards in the Bangladesh leather export industry science 1986,
+          equipped with the state of the art Italian modern machinery and maintaining high quality strictness. Through
+          the years, its production has been progressively entailing a constant expansion of building and machinery.
+          Annual production capacity is 32 million square feet and company sales turnover amounts around US$3 million,
+          thus creating an exemplary model for corporate development in the tannery sector.
+        </p>
 
         <p *ngIf="userRole =='Cattle House Operator'">
-          "Cattle ID: SH9345<br>Breed: Shaiwal <br> Gender: Bull <br> Average Weight: 50 KG <br>Sourced From: Local Cattle Market <br>Date of Birth:2nd June, 2021 (Birth Certification) <br>Location: Kurigram <br> Growth Timeline: Approx. 11 months",
+          "Cattle ID: SH9345<br>Breed: Shaiwal <br> Gender: Bull <br> Average Weight: 50 KG <br>Sourced From: Local
+          Cattle Market <br>Date of Birth:2nd June, 2021 (Birth Certification) <br>Location: Kurigram <br> Growth
+          Timeline: Approx. 11 months",
         </p>
 
         <p *ngIf="userRole == 'Slaughter House Operator'">
-          Buther Name: Hamza Ali <br> Slaughter Date: 24th December, 2022.<br>Location: kurigram <br>Buthcer Method:
-          Manual <br>Number of Male Production Workers: 54 <br> Number of Female Production Workers: 34 <br> Number of
-          Male Employees: 14 <br>Number of Female Employees: 35 <br> Certifications <br>OHS&S (Ocupational Health &
+          Butcher Name: Hamza Ali <br> Slaughtering Date: 24th December, 2022.<br>Location: kurigram <br>Buthcer Method:
+          Manual<br> Certifications <br>OHS&S (Ocupational Health &
           Safety Management System)
         </p>
 
         <p *ngIf="userRole == 'Production Manager'">
-Suppliers for three generations <br>
-We deal with the development and 
-creation of bags for every type of<br>
-need and sector. Sports bags, 
-promotional bags,technical bags, <br>
-safety bags and much more.
-Appreciated above all for <br>
-the high quality of the materials
-and for the modern and<br>
-functional design. You will be able
-to choose from a vast collection and,<br>
+          Suppliers for three generations <br>
+          We deal with the development and
+          creation of bags for every type of<br>
+          need and sector. Sports bags,
+          promotional bags,technical bags, <br>
+          safety bags and much more.
+          Appreciated above all for <br>
+          the high quality of the materials
+          and for the modern and<br>
+          functional design. You will be able
+          to choose from a vast collection and,<br>
         </p>
 
       </div>
 
       <div *ngIf="userRole == 'Tennary Factory Operator'" class="col-5 ">
-        <img src="../../assets/images/tannery.jpg" style="height: 400px; width: 400px;" alt="Card image">
+        <img src="https://cdn.shopify.com/s/files/1/0373/9909/files/what-is-a-tannery-3_480x480.jpg?v=1637237004"
+          style="height: 400px; width: 400px;" alt="Card image">
       </div>
 
 
